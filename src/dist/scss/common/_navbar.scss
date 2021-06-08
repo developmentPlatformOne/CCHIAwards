@@ -1,0 +1,32 @@
+.navbar {
+    height: 85px;
+    background-color: $body-bg;
+    @include breakpoint(mid){
+        height: auto;
+    }
+    .navbar-brand {
+        margin-#{$right}: 40px;
+        img {
+            width: 115px;
+        }
+    }
+    .navbar-nav {
+        .nav-link {
+            font-size: $font-size * 1.571px;
+            padding: 5px 0;
+            margin: 0 20px;
+            color: $fourth-txt;
+        }
+        .active-link {
+            font-weight: 900;
+            border-bottom: solid 3px;
+        }
+    }
+    .switchLang {
+        background-color: $prim-bg;
+        font-size: $font-size * 1.2px;
+        border-radius: 25px;
+        padding: 1px 20px 6px;
+    }
+}
+

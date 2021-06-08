@@ -1,14 +1,14 @@
 import React from 'react';
 import Home from './home/Home';
 import Awards from './awards/Awards';
-import Header from './common/Header';
+import NavBar from './common/Navbar';
 import Footer from './common/Footer';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 export const Routes = () => {
   return (
     <div>
-      <Header />
+      <NavBar />
       <Switch>
         <Route exact path="/Home" component={Home} />
         <Route exact path="/">

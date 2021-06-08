@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from './components/Routes'; // where we are going to specify our routes
 import reportWebVitals from './reportWebVitals';
-import './dist/scss/style.scss'
+if (localStorage.getItem('lang') === 'ar') {
+  require('./dist/css/style-ar.scss');
+} else {
+  require('./dist/css/style-en.scss');
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes />
-    </Router>,
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
