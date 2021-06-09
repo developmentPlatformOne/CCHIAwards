@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from './components/Routes'; // where we are going to specify our routes
 import reportWebVitals from './reportWebVitals';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 if (localStorage.getItem('lang') === 'ar') {
   require('./dist/css/style-ar.scss');
 } else {

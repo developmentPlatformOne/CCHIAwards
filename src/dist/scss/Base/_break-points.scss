@@ -3,7 +3,7 @@
     @media (max-width: $screen-xs) { @content; }
   }
 
-  @else if $point == small {													// max width : 768px
+  @else if $point == small {													// max width : 768px 
     @media (max-width: $screen-sm) { @content; }
   }
 

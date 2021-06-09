@@ -1,10 +1,17 @@
-import React from 'react';
-
+import React, { Fragment } from 'react';
 import Banner from './Banner';
+import About from './About';
+import Aims from './Aims';
+import JudgeSlider from './Slider';
 
 const Home = () => {
   return (
-    <Banner />
+    <Fragment>
+      <Banner />
+      <About />
+      <Aims />
+      <JudgeSlider />
+    </Fragment>
   );
 };
 

@@ -1,0 +1,69 @@
+.banner {
+    position: relative;
+    padding-top: 30px;
+    height: 500px;
+    overflow: hidden;
+    color: $body-txt;
+    background-image: url(../../img/banner.png);
+    background-size: 100% 78%;
+    background-repeat: no-repeat;
+    @include breakpoint(wide){
+        
+    }
+    @include breakpoint(small){
+        
+    }
+    .container {
+        position: relative;
+        z-index: 2;
+        h2 {
+            float: $left;
+            width: 72%;
+            padding: 60px 90px;
+            text-align: center;
+            line-height: 50px;
+            @include breakpoint(small){
+                padding: 60px 5px;
+            }
+        }
+        img {
+            width: 25%;
+            float: $left;
+        }
+    }
+    &:before, &:after {
+        content: "";
+        height: 140%;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        background-image: url(../../img/vector1.svg);
+        background-size: cover;
+        background-position: 0px -10px;
+        background-repeat: no-repeat;
+        z-index: 1;
+        @include breakpoint(wide){
+            height: 100%;
+            bottom: unset;
+            top: 0;
+        }
+    }
+    &:after {
+        background-image: url(../../img/vector2.svg);
+        height: 130%;
+        @include breakpoint(wide){
+            height: 95%;
+        }
+    }
+    .whiteShape {
+        background-image: url(../../img/whiteShape.svg);
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 180px;
+        background-size: cover;
+    }
+}

@@ -5,15 +5,16 @@ body {
   color: $third-txt;
   font-size: $font-size * 1px;
   direction: $dir;
+  text-align: $left;
 }
 
 h2 {
-  font-size: $font-size * 3.428571428571429px;
-  font-family: $font-fm-bold;
+  font-size: $font-size * 2.571428571428571px;
+  font-family: $font-fm-med;
 }
 
 h3 {
-  font-size: $font-size * 1.571px;
+  font-size: $font-size * 1.714285714285714px;
   font-family: $font-fm-bold;
 }
 
