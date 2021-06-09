@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SwitchLang from './SwitchLang';
 import Logo from '../../dist/img/logo.PNG';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 
 
@@ -44,7 +44,6 @@ const NavBar = () => {
               id="home"
               onClick={e => addActiveClass(e)}
             >
-
               {lang === 'ar' ? 'الرئيسية' : 'Home' }
             </Link>
             <Link
@@ -53,7 +52,6 @@ const NavBar = () => {
               id="about"
               onClick={e => addActiveClass(e)}
             >
-
               {lang === 'ar' ? 'عنا' : 'About' }
             </Link>
             <Link
@@ -62,7 +60,6 @@ const NavBar = () => {
               id="aims"
               onClick={e => addActiveClass(e)}
             >
-
               {lang === 'ar' ? 'الغايات والأهداف' : 'Aims and Objective' }
             </Link>
             <Link
@@ -71,17 +68,18 @@ const NavBar = () => {
               id="judge"
               onClick={e => addActiveClass(e)}
             >
-
               {lang === 'ar' ? 'لجنة التحكيم' : 'Judge Panel' }
             </Link>
-            <Link
-              className={isActive === "awards"? 'nav-link active-link': 'nav-link'}
-              to="/Awards"
+            <NavDropdown
+            className={isActive === "awards"? 'active-link': ''}
+              title={lang === 'ar' ? 'الجوائز' : 'Awards' }
               id="awards"
               onClick={e => addActiveClass(e)}
             >
-              {lang === 'ar' ? 'الجوائز' : 'Awards' }
-            </Link>
+              <Link className="dropdown-item" to="/Awards/Health">Health Insurance Companies</Link>
+              <Link className="dropdown-item" to="/Awards/Medical">Medical Service Providers</Link>
+              <Link className="dropdown-item" to="/Awards/ThirdParty">Third Party Administrators (TPAs)</Link>
+            </NavDropdown>
           </Nav>
           :
           <Nav className="mr-auto">
@@ -93,14 +91,16 @@ const NavBar = () => {
             >
               {lang === 'ar' ? 'الرئيسية' : 'Home' }
             </Link>
-            <Link
-              className={isActive === "awards"? 'nav-link active-link': 'nav-link'}
-              to="/Awards"
+            <NavDropdown
+            className={isActive === "awards"? 'active-link': ''}
+              title={lang === 'ar' ? 'الجوائز' : 'Awards' }
               id="awards"
               onClick={e => addActiveClass(e)}
             >
-              {lang === 'ar' ? 'الجوائز' : 'Awards' }
-            </Link>
+              <Link className="dropdown-item" to="/Awards/Health">Health Insurance Companies</Link>
+              <Link className="dropdown-item" to="/Awards/Medical">Medical Service Providers</Link>
+              <Link className="dropdown-item" to="/Awards/ThirdParty">Third Party Administrators (TPAs)</Link>
+            </NavDropdown>
           </Nav> 
           }
         </Navbar.Collapse>
