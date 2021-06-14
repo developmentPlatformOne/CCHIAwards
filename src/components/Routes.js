@@ -6,7 +6,7 @@ import Medical from './awards/Medical';
 import ThirdParty from './awards/ThirdParty';
 import NavBar from './common/Navbar';
 import Footer from './common/Footer';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 export const Routes = () => {
 
@@ -24,6 +24,7 @@ export const Routes = () => {
         judgeScroll={()=> scrollToDiv(judgeRef)}
         homeScroll={()=> scrollToDiv(homeRef)}
       />
+      <Router>
       <Switch>
         <Route exact path="/Home" render={(props) => (
           <Home
@@ -42,6 +43,7 @@ export const Routes = () => {
         <Route exact path="/Awards/Medical" component={Medical} />
         <Route exact path="/Awards/ThirdParty" component={ThirdParty} />
       </Switch>
+      </Router>
       <Footer />
     </div>
   );
