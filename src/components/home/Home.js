@@ -4,13 +4,13 @@ import About from './About';
 import Aims from './Aims';
 import JudgeSlider from './Slider';
 
-const Home = () => {
+const Home = (props) => {
   return (
     <Fragment>
-      <Banner />
-      <About />
-      <Aims />
-      <JudgeSlider />
+      <Banner homeRef={props.homeRef} />
+      <About aboutRef={props.aboutRef} />
+      <Aims aimsRef={props.aimsRef} />
+      <JudgeSlider judgeRef={props.judgeRef} />
     </Fragment>
   );
 };

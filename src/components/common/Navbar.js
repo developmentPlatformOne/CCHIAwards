@@ -8,7 +8,7 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 const lang = localStorage.getItem('lang');
 
-const NavBar = () => {
+const NavBar = (props) => {
   const location = useLocation();
 
   const isCurrentURL = (url) => {
@@ -29,46 +29,47 @@ const NavBar = () => {
 
 
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" fixed="top">
       <Container>
         <Link className="navbar-brand" to="/Home">
           <img src={Logo} alt="logo" />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          { isCurrentURL('/Home') ? 
+          { isCurrentURL('/AwardsWebSite') ? 
           <Nav className="mr-auto">
             <Link
               className={isActive === "home"? 'nav-link active-link': 'nav-link'}
-              to="/Home"
+              to="/AwardsWebSite"
               id="home"
-              onClick={e => addActiveClass(e)}
+              onClick={e => {addActiveClass(e); props.homeScroll()}}
             >
               {lang === 'ar' ? 'الرئيسية' : 'Home' }
             </Link>
             <Link
               className={isActive === "about"? 'nav-link active-link': 'nav-link'}
-              to="/Home"
+              to="/AwardsWebSite"
               id="about"
-              onClick={e => addActiveClass(e)}
+              onClick={e => {addActiveClass(e); props.aboutScroll()}}
             >
               {lang === 'ar' ? 'عنا' : 'About' }
             </Link>
+           
             <Link
               className={isActive === "aims"? 'nav-link active-link': 'nav-link'}
-              to="/Home"
+              to="/AwardsWebSite"
               id="aims"
-              onClick={e => addActiveClass(e)}
+              onClick={e => {addActiveClass(e); props.aimsScroll()}}
             >
               {lang === 'ar' ? 'الغايات والأهداف' : 'Aims and Objective' }
             </Link>
             <Link
               className={isActive === "judge"? 'nav-link active-link': 'nav-link'}
-              to="/Home"
+              to="/AwardsWebSite"
               id="judge"
-              onClick={e => addActiveClass(e)}
+              onClick={e => {addActiveClass(e); props.judgeScroll()}}
             >
-              {lang === 'ar' ? 'لجنة التحكيم' : 'Judge Panel' }
+              {lang === 'ar' ? 'لجنة التحكيم' : 'Judge Panel'}
             </Link>
             <NavDropdown
             className={isActive === "awards"? 'active-link': ''}
@@ -76,16 +77,16 @@ const NavBar = () => {
               id="awards"
               onClick={e => addActiveClass(e)}
             >
-              <Link className="dropdown-item" to="/Awards/Health">Health Insurance Companies</Link>
-              <Link className="dropdown-item" to="/Awards/Medical">Medical Service Providers</Link>
-              <Link className="dropdown-item" to="/Awards/ThirdParty">Third Party Administrators (TPAs)</Link>
+              <Link className="dropdown-item" to="/Awards/Health">{lang === 'ar' ? 'شركات التأمين الصحي' : 'Health Insurance Companies' }</Link>
+              <Link className="dropdown-item" to="/Awards/Medical">{lang === 'ar' ? 'مقدمو الخدمات الطبية' : 'Medical Service Providers' }</Link>
+              <Link className="dropdown-item" to="/Awards/ThirdParty">{lang === 'ar' ? 'مبادرة المطالبات للسنة TPA' : 'Third Party Administrators (TPAs)' }</Link>
             </NavDropdown>
           </Nav>
           :
           <Nav className="mr-auto">
             <Link
               className={isActive === "home"? 'nav-link active-link': 'nav-link'}
-              to="/Home"
+              to="/AwardsWebSite"
               id="home"
               onClick={e => addActiveClass(e)}
             >
@@ -97,9 +98,9 @@ const NavBar = () => {
               id="awards"
               onClick={e => addActiveClass(e)}
             >
-              <Link className="dropdown-item" to="/Awards/Health">Health Insurance Companies</Link>
-              <Link className="dropdown-item" to="/Awards/Medical">Medical Service Providers</Link>
-              <Link className="dropdown-item" to="/Awards/ThirdParty">Third Party Administrators (TPAs)</Link>
+              <Link className="dropdown-item" to="/Awards/Health">{lang === 'ar' ? 'شركات التأمين الصحي' : 'Health Insurance Companies' }</Link>
+              <Link className="dropdown-item" to="/Awards/Medical">{lang === 'ar' ? 'مقدمو الخدمات الطبية' : 'Medical Service Providers' }</Link>
+              <Link className="dropdown-item" to="/Awards/ThirdParty">{lang === 'ar' ? 'مبادرة المطالبات للسنة TPA' : 'Third Party Administrators (TPAs)' }</Link>
             </NavDropdown>
           </Nav> 
           }

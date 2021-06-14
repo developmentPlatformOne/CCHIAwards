@@ -1,6 +1,7 @@
 .navbar {
     height: 85px;
     background-color: $body-bg;
+    box-shadow: 4px 10px 31px 0 rgba(112, 144, 176, 0.25);
     @include breakpoint(mid){
         height: auto;
     }

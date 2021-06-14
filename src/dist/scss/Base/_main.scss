@@ -1,4 +1,7 @@
-﻿
+﻿html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $body-bg;
   font-family: $font-fm-reg;
@@ -6,6 +9,7 @@ body {
   font-size: $font-size * 1px;
   direction: $dir;
   text-align: $left;
+  padding-top: 85px;
 }
 
 h2 {

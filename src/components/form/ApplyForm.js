@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from 'axios'
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-
-export default function ApplyForm() {
+import plus from '../../dist/img/plus.svg';
+import { Container, Accordion, Card, useAccordionToggle, Button, Col, Row, Form } from 'react-bootstrap';
+function CustomToggle({ children, eventKey, handleClick }) {
+    const decoratedOnClick = useAccordionToggle(eventKey, () => {
+      handleClick();
+    });
+  
+    return (
+      <div className="card-header" type="button" onClick={decoratedOnClick}>
+        {children}
+      </div>
+    );
+  }
+export default function ApplyForm(props) {
   const formik = useFormik({
     initialValues: {
         companyName: "",
@@ -98,11 +109,191 @@ export default function ApplyForm() {
         });
     },
   });
-
+  const [activeKeyChild, setActiveKeyChild] = useState("30");
   return (
     <Container>
-        <Form onSubmit={formik.handleSubmit}>
+        <div className="applyFormHeader">
+            <img src={props.awardIcon} alt="icon" />
+            <h3>{props.formName}</h3>
+        </div>
+        <div className="tabChild">
+                <Accordion defaultActiveKey="30">
+                  <Card>
+                      <CustomToggle
+                        as={Card.Header}
+                        eventKey="30"
+                        handleClick={() => {
+                          if (activeKeyChild === "30") {
+                            setActiveKeyChild(null);
+                          } else {
+                            setActiveKeyChild("30");
+                          }
+                        }}
+                      >
+                        <span>Eligibility Criteria</span>
+                        <img alt="img" src={plus} className={activeKeyChild === "30" ? "plus activeAccChild" : "plus"} />
+                      </CustomToggle>
+                      <Accordion.Collapse className="collapseHolder" eventKey="30">
+                          <Card.Body>
+                            <ul>
+                                <li>
+                                Entries are welcomed from all international and local organizations (Insurance companies, Third Party Administrators (TPAs), and Medical Service Providers) actively operating in Saudi Arabia.
+                                </li>
+                                <li>
+                                For individual award the candidates can self-nominate themselves or can be nominated by insurance company.
+                                </li>
+                                <li>
+                                The product/initiative/innovation/service should be completely executed in the Saudi Arabian operations of the participant organization.
+                                </li>
+                                <li>
+                                The product/initiative/innovation/service nominated applied must be developed within the participating organization. An organization cannot participate on behalf of its sister units or parent organization
+                                </li>
+                            </ul>
+                          </Card.Body>
+                      </Accordion.Collapse>
+                  </Card>
 
+                  <Card>
+                      <CustomToggle
+                        as={Card.Header}
+                        eventKey="31"
+                        handleClick={() => {
+                          if (activeKeyChild === "31") {
+                            setActiveKeyChild(null);
+                          } else {
+                            setActiveKeyChild("31");
+                          }
+                        }}
+                      >
+                        <span>Entry Guidelines</span>
+                        <img alt="img" src={plus} className={activeKeyChild === "31" ? "plus activeAccChild" : "plus"} />
+                      </CustomToggle>
+                      <Accordion.Collapse className="collapseHolder" eventKey="31">
+                          <Card.Body>
+                            <ul>
+                              <li>
+                              Read the criteria for the award category for which you want to enter
+                              </li>
+                              <li>
+                              All entries must be a written explanation in English and must specifically address the award criteria for which entry has been made. The write-up should not be more 1,000 words and should be attached as a PDF. Should the word count exceed 1,000 words, the excess words will be neglected by the judges
+                              </li>
+                              <li>
+                              Additional supporting information should be supplied in English as a PDF – to a limit of 3 pages 
+                              </li>
+                              <li>
+                              Additional supporting information should be supplied in English as a PDF – to a limit of 3 pages 
+                              </li>
+                              <li>
+                              Complete the online nomination form and upload the 1000 word write-up together with additional supporting material with the form and submit your entry online
+                              </li>
+                            </ul>
+                          </Card.Body>
+                      </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                      <CustomToggle
+                        as={Card.Header}
+                        eventKey="32"
+                        handleClick={() => {
+                          if (activeKeyChild === "32") {
+                            setActiveKeyChild(null);
+                          } else {
+                            setActiveKeyChild("32");
+                          }
+                        }}
+                      >
+                        <span>Rule of Entry</span>
+                        <img alt="img" src={plus} className={activeKeyChild === "32" ? "plus activeAccChild" : "plus"} />
+                      </CustomToggle>
+                      <Accordion.Collapse className="collapseHolder" eventKey="32">
+                          <Card.Body>
+                            <strong>
+                            By submitting an entry, the entrant confirms they have read and agreed with the ‘Rules of entry’ and understand these now apply:
+                            </strong>
+                            <ul>
+                              <li>
+                              Entry is completely free of charge
+                              </li>
+                              <li>
+                              All fields of the nomination form must be completed in all respect; incomplete forms will result in disqualification
+                              </li>
+                              <li>
+                              Entries will be accepted in English language only, including the supporting documentation
+                              </li>
+                              <li>
+                              All entries must be received by <strong>XXXX (To be confirmed by CCHI)</strong>
+                              </li>
+                              <li>
+                              If you are entering in more than one award category, then a separate nomination form has to be filled for each entry
+                              </li>
+                              <li>
+                              CCHI reserves the right to use entrants company logo for associated marketing of the CCHI awards in print, social media or on our website
+                              </li>
+                              <li>
+                              CCHI reserves the right to retain company logos and company detail for subsequent publication in relation to the CCHI awards
+                              </li>
+                              <li>
+                              Should a Participant wish to withdraw from the Awards, kindly inform CCHI in writing at any time up to two weeks prior to the final awards ceremony
+                              </li>
+                              <li>
+                              Please ensure that the information submitted is accurate and correct. CCHI accepts no responsibility for any incorrectly submitted information
+                              </li>
+                              <li>
+                              If required, Judges will conduct interviews with nominees to validate certain aspects of the submitted nomination
+                              </li>
+                              <li>
+                              The jury decision will be final and binding on all nominees
+                              </li>
+                              <li>
+                              The winners will be announced on <strong>XXXX (To be confirmed by CCHI)</strong> at an award ceremony held in a Five Star hotel <strong>(Venue to be confirmed by CCHI)</strong> and virtual streaming 
+                              </li>
+                              <li>
+                              CCHI reserves the right to reject any entry for any reason
+                              </li>
+                              <li>
+                              Submitting entry for non-relevant award category will lead to rejection of the entry
+                              </li>
+                              <li>
+                              Your entry may also involve submitting sensitive information and/or supplying your intellectual property material. Such sensitive information should be marked up as ‘strictly in confidence’. We will undertake to respect all such notification with regard to editorial coverage and publicity
+                              </li>
+                            </ul>
+                          </Card.Body>
+                      </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                      <CustomToggle
+                        as={Card.Header}
+                        eventKey="33"
+                        handleClick={() => {
+                          if (activeKeyChild === "33") {
+                            setActiveKeyChild(null);
+                          } else {
+                            setActiveKeyChild("33");
+                          }
+                        }}
+                      >
+                        <span>Format of Submission</span>
+                        <img alt="img" src={plus} className={activeKeyChild === "33" ? "plus activeAccChild" : "plus"} />
+                      </CustomToggle>
+                      <Accordion.Collapse className="collapseHolder" eventKey="33">
+                          <Card.Body>
+                            <ul>
+                              <li>
+                              The call for entries for the awards will be announced through one or more media platforms, Email and the official awards website
+                              </li>
+                              <li>
+                              A participant can apply for the awards by logging onto the website <a href="www.cchi.gov.sa" target="_blank">www.cchi.gov.sa</a> and filling the nomination form along with uploading the write up explanation and the supporting documents directly on nomination form
+                              </li>
+                            </ul>
+                          </Card.Body>
+                      </Accordion.Collapse>
+                  </Card>
+                </Accordion>
+            </div>
+        <Form className="applyForm" onSubmit={formik.handleSubmit}>
+        <div className="formHeader">
+            Nomination Form
+        </div>
         <Row>
             <Col>
                 <Form.Group>
@@ -119,6 +310,8 @@ export default function ApplyForm() {
                     ) : ''}
                 </Form.Group>
             </Col>
+        </Row>
+        <Row>
             <Col>
                 <Form.Group>
                     <Form.Label>Company Type</Form.Label>
@@ -134,6 +327,8 @@ export default function ApplyForm() {
                     ) : ''}
                 </Form.Group>
             </Col>
+        </Row>
+        <Row>
             <Col>
                 <Form.Group>
                     <Form.Label>Company Url</Form.Label>
@@ -150,9 +345,8 @@ export default function ApplyForm() {
                 </Form.Group>
             </Col>
         </Row>
-
         <Row>
-            <Col xs md lg="8">
+            <Col>
                 <Form.Group>
                     <Form.Label>Company Description</Form.Label>
                     <Form.Control
@@ -167,7 +361,6 @@ export default function ApplyForm() {
                 </Form.Group>
             </Col>
         </Row>
-
         <Row>
             <Col>
                 <Form.Group>
@@ -184,6 +377,8 @@ export default function ApplyForm() {
                     ) : ''}
                 </Form.Group>
             </Col>
+        </Row>
+        <Row>
             <Col>
                 <Form.Group>
                     <Form.Label>Contact Number</Form.Label>
@@ -199,6 +394,8 @@ export default function ApplyForm() {
                     ) : ''}
                 </Form.Group>
             </Col>
+        </Row>
+        <Row>
             <Col>
                 <Form.Group>
                     <Form.Label>Email Address</Form.Label>
@@ -215,7 +412,6 @@ export default function ApplyForm() {
                 </Form.Group>
             </Col>
         </Row>
-            
         <Row>
             <Col>
                 <Form.Group>
@@ -235,6 +431,8 @@ export default function ApplyForm() {
                     ) : ''}
                 </Form.Group>
             </Col>
+        </Row>
+        <Row>
             <Col>
                 <Form.Group>
                     <Form.Label>Call Entry</Form.Label>
@@ -250,6 +448,8 @@ export default function ApplyForm() {
                     ) : ''}
                 </Form.Group>
             </Col>
+        </Row>
+        <Row>
             <Col>
                 <Form.Group>
                     <Form.Label>Contact Name</Form.Label>
@@ -266,7 +466,6 @@ export default function ApplyForm() {
                 </Form.Group>
             </Col>
         </Row>
-
         <Row>
             <Col>
                 <Form.Group>
@@ -284,6 +483,8 @@ export default function ApplyForm() {
                     ) : ''}
                 </Form.Group>
             </Col>
+        </Row>
+        <Row>
             <Col>
                 <Form.Group>
                     <Form.Label>Attach File 1</Form.Label>
@@ -300,6 +501,8 @@ export default function ApplyForm() {
                     ) : ''}
                 </Form.Group>
             </Col>
+        </Row>
+        <Row>
             <Col>
                 <Form.Group>
                     <Form.Label>Attach File 2</Form.Label>
@@ -317,7 +520,9 @@ export default function ApplyForm() {
                 </Form.Group>
             </Col>
         </Row>
-        <Button variant="primary" type="submit">Submit</Button>
+        <div className="btnHolder">
+            <Button variant="primary" type="submit">Submit</Button>
+        </div>
         </Form>
     </Container>
   );

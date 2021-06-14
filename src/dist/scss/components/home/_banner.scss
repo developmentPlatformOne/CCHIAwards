@@ -4,7 +4,7 @@
     height: 500px;
     overflow: hidden;
     color: $body-txt;
-    background-image: url(../../img/banner.png);
+    background-image: url(../../../img/banner.png);
     background-size: 100% 78%;
     background-repeat: no-repeat;
     @include breakpoint(wide){
@@ -38,7 +38,7 @@
         right: 0;
         bottom: 0;
         position: absolute;
-        background-image: url(../../img/vector1.svg);
+        background-image: url(../../../img/vector1.svg);
         background-size: cover;
         background-position: 0px -10px;
         background-repeat: no-repeat;
@@ -50,14 +50,14 @@
         }
     }
     &:after {
-        background-image: url(../../img/vector2.svg);
+        background-image: url(../../../img/vector2.svg);
         height: 130%;
         @include breakpoint(wide){
             height: 95%;
         }
     }
     .whiteShape {
-        background-image: url(../../img/whiteShape.svg);
+        background-image: url(../../../img/whiteShape.svg);
         display: block;
         position: absolute;
         bottom: 0;
