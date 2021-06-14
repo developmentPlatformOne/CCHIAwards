@@ -24,7 +24,7 @@ export const Routes = () => {
         judgeScroll={()=> scrollToDiv(judgeRef)}
         homeScroll={()=> scrollToDiv(homeRef)}
       />
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/Home" render={(props) => (
           <Home
