@@ -36,11 +36,11 @@ const NavBar = (props) => {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          { isCurrentURL('/AwardsWebSite') ? 
+          { isCurrentURL('/Home') ? 
           <Nav className="mr-auto">
             <Link
               className={isActive === "home"? 'nav-link active-link': 'nav-link'}
-              to="/AwardsWebSite"
+              to="/Home"
               id="home"
               onClick={e => {addActiveClass(e); props.homeScroll()}}
             >
@@ -48,7 +48,7 @@ const NavBar = (props) => {
             </Link>
             <Link
               className={isActive === "about"? 'nav-link active-link': 'nav-link'}
-              to="/AwardsWebSite"
+              to="/Home"
               id="about"
               onClick={e => {addActiveClass(e); props.aboutScroll()}}
             >
@@ -57,7 +57,7 @@ const NavBar = (props) => {
            
             <Link
               className={isActive === "aims"? 'nav-link active-link': 'nav-link'}
-              to="/AwardsWebSite"
+              to="/Home"
               id="aims"
               onClick={e => {addActiveClass(e); props.aimsScroll()}}
             >
@@ -65,7 +65,7 @@ const NavBar = (props) => {
             </Link>
             <Link
               className={isActive === "judge"? 'nav-link active-link': 'nav-link'}
-              to="/AwardsWebSite"
+              to="/Home"
               id="judge"
               onClick={e => {addActiveClass(e); props.judgeScroll()}}
             >
@@ -86,7 +86,7 @@ const NavBar = (props) => {
           <Nav className="mr-auto">
             <Link
               className={isActive === "home"? 'nav-link active-link': 'nav-link'}
-              to="/AwardsWebSite"
+              to="/Home"
               id="home"
               onClick={e => addActiveClass(e)}
             >

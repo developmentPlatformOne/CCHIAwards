@@ -25,7 +25,7 @@ export const Routes = () => {
         homeScroll={()=> scrollToDiv(homeRef)}
       />
       <Switch>
-        <Route exact path="/AwardsWebSite" render={(props) => (
+        <Route exact path="/Home" render={(props) => (
           <Home
             {...props} 
             aboutRef={aboutRef} 
@@ -35,7 +35,7 @@ export const Routes = () => {
           />
         )} />
         <Route exact path="/">
-          <Redirect to="/AwardsWebSite" />
+          <Redirect to="/Home" />
         </Route>
         <Route exact path="/Awards" component={Awards} />
         <Route exact path="/Awards/Health" component={Health} />
