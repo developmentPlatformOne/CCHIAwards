@@ -1,16 +1,15 @@
 import React, {useRef} from 'react';
 import Home from './home/Home';
-import Awards from './awards/Awards';
 import Health from './awards/Health';
 import Medical from './awards/Medical';
 import ThirdParty from './awards/ThirdParty';
 import NavBar from './common/Navbar';
 import Footer from './common/Footer';
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, HashRouter } from 'react-router-dom';
 
 export const Routes = () => {
 
-  const scrollToDiv = (ref) => window.scrollTo(0, (ref.current.offsetTop - 85));
+  const scrollToDiv = (ref) => window.scrollTo(0, (ref.current.offsetTop - 70));
   const aboutRef = useRef();
   const aimsRef = useRef();
   const judgeRef = useRef();
@@ -24,7 +23,7 @@ export const Routes = () => {
         judgeScroll={()=> scrollToDiv(judgeRef)}
         homeScroll={()=> scrollToDiv(homeRef)}
       />
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter>
       <Switch>
         <Route exact path="/Home" render={(props) => (
           <Home
@@ -38,12 +37,11 @@ export const Routes = () => {
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
-        <Route exact path="/Awards" component={Awards} />
         <Route exact path="/Awards/Health" component={Health} />
         <Route exact path="/Awards/Medical" component={Medical} />
         <Route exact path="/Awards/ThirdParty" component={ThirdParty} />
       </Switch>
-      </Router>
+      </HashRouter>
       <Footer />
     </div>
   );

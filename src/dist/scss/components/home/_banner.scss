@@ -1,17 +1,14 @@
 .banner {
     position: relative;
     padding-top: 30px;
-    height: 500px;
+    height: 375px;
     overflow: hidden;
     color: $body-txt;
     background-image: url(../../../img/banner.png);
     background-size: 100% 78%;
     background-repeat: no-repeat;
-    @include breakpoint(wide){
-        
-    }
-    @include breakpoint(small){
-        
+    @include breakpoint(x-small){
+        height: 420px;
     }
     .container {
         position: relative;
@@ -25,10 +22,16 @@
             @include breakpoint(small){
                 padding: 60px 5px;
             }
+            @include breakpoint(x-small){
+                width: 100%;
+            }
         }
         img {
-            width: 25%;
+            width: 18%;
             float: $left;
+            @include breakpoint(x-small){
+                display: none;
+            }
         }
     }
     &:before, &:after {
@@ -40,7 +43,7 @@
         position: absolute;
         background-image: url(../../../img/vector1.svg);
         background-size: cover;
-        background-position: 0px -10px;
+        background-position: bottom;
         background-repeat: no-repeat;
         z-index: 1;
         @include breakpoint(wide){
@@ -54,6 +57,7 @@
         height: 130%;
         @include breakpoint(wide){
             height: 95%;
+            background-position: 0px -105px;
         }
     }
     .whiteShape {
@@ -63,7 +67,7 @@
         bottom: 0;
         right: 0;
         width: 100%;
-        height: 180px;
+        height: 145px;
         background-size: cover;
     }
 }

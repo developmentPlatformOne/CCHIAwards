@@ -3,7 +3,7 @@
     h2 {
         text-align: center;
         color: $second-txt;
-        padding-bottom: 30px;
+        padding-bottom: 0px;
         &:after {
             content: "";
             height: 4px;
@@ -22,11 +22,11 @@
             box-shadow: 4px 10px 31px 8px rgba(112, 144, 176, 0.2);
             background-color: $body-bg;
             position: relative;
-            padding: 105px 20px 35px;
+            padding: 95px 20px 35px;
             text-align: center;
-            min-height: 410px;
+            min-height: 370px;
             img {
-                width: 170px;
+                width: 145px;
                 position: absolute;
                 top: 0;
                 left: 50%;
@@ -38,15 +38,20 @@
                     color: $second-txt;
                 }
                 h5 {
-                    padding: 10px 0 20px;
+                    padding: 10px 0 15px;
                 }
                 p {
-    
+                    margin-bottom: 5px;
                 }
                 span {
                     font-weight: 900;
-                    padding-top: 20px;
                     display: block;
+                    position: absolute;
+                    bottom: 60px;
+                    transform: translateY(50%);
+                    width: 100%;
+                    right: 0;
+                    padding: 0 15px;
                 }
             }
         }

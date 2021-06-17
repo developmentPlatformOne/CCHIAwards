@@ -1,15 +1,18 @@
 .about {
     .about_1, .about_2, .about_3 {
         height: 450px;
+        @include breakpoint(x-small){
+            height: 555px;
+        }
         overflow: hidden;
         img {
-
+            
         }
         h2 {
             padding: 50px 0 15px;
             &:after {
                 content: "";
-                height: 4px;
+                height: 3px;
                 width: 25%;
                 display: block;
                 margin-top: 7px;
@@ -20,24 +23,25 @@
         }
         p {
             padding: 0;
+            margin-top: 20px;
         }
     }
     .about_1, .about_3 {
         padding: 30px 0;
-        height: 400px;
+        height: 450px;
         @include breakpoint(mid){
             height: auto;
             padding-bottom: 25px;
         }
         img {
-            width: 55%;
+            width: 70%;
             margin: auto;
             display: block;
-            margin-top: 25px;
+            margin-top: 8px;
         }
         h2 {
             color: $second-txt;
-            padding: 20px 0px 15px;
+            padding: 40px 0px 15px;
             &:after {
                 background-color: $prim-bg;
             }
@@ -59,7 +63,10 @@
             }
         } 
         img {
-
+            float: $left;
+            @include breakpoint(small){
+                float: none;
+            }
         }
         h2 {
 
@@ -92,7 +99,7 @@
         h2 {
             color: $body-txt;
             &:after {
-                background-color: $body-bg;
+                background-color: $second-bg;
             }
         }
         p {
@@ -106,7 +113,10 @@
             }
         } 
         img {
-            
+            float: $right;
+            @include breakpoint(small){
+                float: none;
+            }
         }
         h2 {
             

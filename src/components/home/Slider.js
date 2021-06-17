@@ -19,6 +19,24 @@ export default class JudgeSlider extends Component {
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          }
+        },
+      ]
     };
     return (
       <section className="judgeSlider" id="about" ref={this.props.judgeRef}>

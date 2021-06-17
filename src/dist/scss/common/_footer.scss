@@ -36,10 +36,17 @@ footer {
     }
     h4 {
         padding-bottom: 15px;
+        padding-top: 15px;
+        text-align: center;
+    }
+    p {
+        text-align: center;
     }
     a {
         color: $body-txt;
         transition: all 0.2s linear;
+        display: block;
+        text-align: center;
         &:hover {
             color: $second-txt;
             text-decoration: none;
@@ -47,7 +54,8 @@ footer {
     }
     ul {
         display: flex;
-        margin: 0;
+        justify-content: center;
+        text-align: center;
         padding: 0;
         li {
             list-style: none;
@@ -65,11 +73,12 @@ footer {
     .copyRight {
         border-top: solid 1px;
         text-align: center;
-        height: 65px;
+        height: 35px;
         position: absolute;
         bottom: 0;
         right: 0;
         width: 100%;
-        padding-top: 21px;
+        padding-top: 7px;
+        font-size: 12px;
     }
 }
