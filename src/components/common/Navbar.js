@@ -25,25 +25,29 @@ const NavBar = (props) => {
         setActive(clicked);
      }
   }
+
+  const hideCollapseMenu = () => {
+    document.getElementById("responsive-navbar-nav").classList.remove("show");
+    document.getElementById("collapseBtn").classList.add("collapsed");
     
-console.log(location)
+  }
 
   return (
-    <Navbar expand="lg" fixed="top">
+    <Navbar collapseOnSelect expand="lg" fixed="top">
       <Container>
       <HashRouter>
         <Link className="navbar-brand" to="/Home">
           <img src={Logo} alt="logo" />
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle id="collapseBtn" aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
           { isCurrentURL('#/Home') ? 
           <Nav className="mr-auto">
             <Link
               className={isActive === "home"? 'nav-link active-link': 'nav-link'}
               to="/Home"
               id="home"
-              onClick={e => {addActiveClass(e); props.homeScroll()}}
+              onClick={e => {addActiveClass(e); props.homeScroll(); hideCollapseMenu()}}
             >
               {lang === 'ar' ? 'الرئيسية' : 'Home' }
             </Link>
@@ -75,9 +79,9 @@ console.log(location)
               id="awards"
               onClick={e => addActiveClass(e)}
             >
-              <Link className="dropdown-item" to="/Awards/Health">{lang === 'ar' ? 'شركات التأمين الصحي' : 'Health Insurance Companies' }</Link>
-              <Link className="dropdown-item" to="/Awards/Medical">{lang === 'ar' ? 'مقدمو الخدمات الطبية' : 'Medical Service Providers' }</Link>
-              <Link className="dropdown-item" to="/Awards/ThirdParty">{lang === 'ar' ? 'مبادرة المطالبات للسنة TPA' : 'Third Party Administrators (TPAs)' }</Link>
+              <Link className="dropdown-item" onClick={() => hideCollapseMenu()} to="/Awards/Health">{lang === 'ar' ? 'شركات التأمين الصحي' : 'Health Insurance Companies' }</Link>
+              <Link className="dropdown-item" onClick={() => hideCollapseMenu()} to="/Awards/Medical">{lang === 'ar' ? 'مقدمو الخدمات الطبية' : 'Medical Service Providers' }</Link>
+              <Link className="dropdown-item" onClick={() => hideCollapseMenu()} to="/Awards/ThirdParty">{lang === 'ar' ? 'مبادرة المطالبات للسنة TPA' : 'Third Party Administrators (TPAs)' }</Link>
             </NavDropdown>
           </Nav>
           :
@@ -86,7 +90,7 @@ console.log(location)
               className={isActive === "home"? 'nav-link active-link': 'nav-link'}
               to="/Home"
               id="home"
-              onClick={e => addActiveClass(e)}
+              onClick={e => {addActiveClass(e); hideCollapseMenu()}}
             >
               {lang === 'ar' ? 'الرئيسية' : 'Home' }
             </Link>
@@ -96,9 +100,9 @@ console.log(location)
               id="awards"
               onClick={e => addActiveClass(e)}
             >
-              <Link className="dropdown-item" to="/Awards/Health">{lang === 'ar' ? 'شركات التأمين الصحي' : 'Health Insurance Companies' }</Link>
-              <Link className="dropdown-item" to="/Awards/Medical">{lang === 'ar' ? 'مقدمو الخدمات الطبية' : 'Medical Service Providers' }</Link>
-              <Link className="dropdown-item" to="/Awards/ThirdParty">{lang === 'ar' ? 'مبادرة المطالبات للسنة TPA' : 'Third Party Administrators (TPAs)' }</Link>
+              <Link className="dropdown-item" onClick={() => hideCollapseMenu()} to="/Awards/Health">{lang === 'ar' ? 'شركات التأمين الصحي' : 'Health Insurance Companies' }</Link>
+              <Link className="dropdown-item" onClick={() => hideCollapseMenu()} to="/Awards/Medical">{lang === 'ar' ? 'مقدمو الخدمات الطبية' : 'Medical Service Providers' }</Link>
+              <Link className="dropdown-item" onClick={() => hideCollapseMenu()} to="/Awards/ThirdParty">{lang === 'ar' ? 'مبادرة المطالبات للسنة TPA' : 'Third Party Administrators (TPAs)' }</Link>
             </NavDropdown>
           </Nav> 
           }

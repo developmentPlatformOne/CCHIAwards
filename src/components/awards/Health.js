@@ -465,10 +465,10 @@ const Health = () => {
                           <Card.Body>
                           {lang === 'ar' ? 
                             <p>
-                            The Award will be given to insurance companies which will demonstrate an excellent level of customer care backed by clear standards: Speed of claim settlement, Ease of communicating with insurer, Transparency and ease of process and employee knowledge and professionalism
+                            ستمنح الجائزة لشركات التأمين التي ستظهر مستوى ممتازًا من رعاية العملاء مدعومة بمعايير واضحة: سرعة تسوية المطالبات ، سهولة التواصل مع شركة التأمين ، الشفافية وسهولة العملية ومستوي معرفة الموظف والاحتراف
                             </p> : 
                             <p>
-                            ستمنح الجائزة لشركات التأمين التي ستظهر مستوى ممتازًا من رعاية العملاء مدعومة بمعايير واضحة: سرعة تسوية المطالبات ، سهولة التواصل مع شركة التأمين ، الشفافية وسهولة العملية ومستوي معرفة الموظف والاحتراف
+                            The Award will be given to insurance companies which will demonstrate an excellent level of customer care backed by clear standards: Speed of claim settlement, Ease of communicating with insurer, Transparency and ease of process and employee knowledge and professionalism
                             </p>
                           }
                           </Card.Body>
