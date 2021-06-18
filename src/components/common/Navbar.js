@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, HashRouter } from 'react-router-dom';
 import SwitchLang from './SwitchLang';
 import Logo from '../../dist/img/logo.PNG';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
@@ -12,7 +12,7 @@ const NavBar = (props) => {
   const location = useLocation();
 
   const isCurrentURL = (url) => {
-      return location.pathname.toLowerCase() === url.toLowerCase();
+      return location.hash.toLowerCase() === url.toLowerCase();
   }
   
   const [isActive, setActive] = useState('home');
@@ -26,17 +26,18 @@ const NavBar = (props) => {
      }
   }
     
-
+console.log(location)
 
   return (
     <Navbar expand="lg" fixed="top">
       <Container>
+      <HashRouter>
         <Link className="navbar-brand" to="/Home">
           <img src={Logo} alt="logo" />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          { isCurrentURL('/Home') ? 
+          { isCurrentURL('#/Home') ? 
           <Nav className="mr-auto">
             <Link
               className={isActive === "home"? 'nav-link active-link': 'nav-link'}
@@ -48,7 +49,6 @@ const NavBar = (props) => {
             </Link>
             <Link
               className={isActive === "about"? 'nav-link active-link': 'nav-link'}
-              to="/Home"
               id="about"
               onClick={e => {addActiveClass(e); props.aboutScroll()}}
             >
@@ -57,7 +57,6 @@ const NavBar = (props) => {
            
             <Link
               className={isActive === "aims"? 'nav-link active-link': 'nav-link'}
-              to="/Home"
               id="aims"
               onClick={e => {addActiveClass(e); props.aimsScroll()}}
             >
@@ -65,7 +64,6 @@ const NavBar = (props) => {
             </Link>
             <Link
               className={isActive === "judge"? 'nav-link active-link': 'nav-link'}
-              to="/Home"
               id="judge"
               onClick={e => {addActiveClass(e); props.judgeScroll()}}
             >
@@ -105,6 +103,7 @@ const NavBar = (props) => {
           </Nav> 
           }
         </Navbar.Collapse>
+        </HashRouter>
         <SwitchLang />
       </Container>
     </Navbar>
