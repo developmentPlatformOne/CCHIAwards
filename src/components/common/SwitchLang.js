@@ -15,7 +15,7 @@ function SwitchLang() {
   }
 
   return (
-    <Button className="switchLang" onClick={() => handleLang()}>
+    <Button type="button" className="switchLang" onClick={() => handleLang()}>
         {lang === 'ar' ? 'English' : 'عربي' }
     </Button>
   );
