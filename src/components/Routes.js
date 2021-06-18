@@ -23,7 +23,7 @@ export const Routes = () => {
         judgeScroll={()=> scrollToDiv(judgeRef)}
         homeScroll={()=> scrollToDiv(homeRef)}
       />
-      <HashRouter>
+      
       <Switch>
         <Route exact path="/Home" render={(props) => (
           <Home
@@ -41,7 +41,7 @@ export const Routes = () => {
         <Route exact path="/Awards/Medical" component={Medical} />
         <Route exact path="/Awards/ThirdParty" component={ThirdParty} />
       </Switch>
-      </HashRouter>
+      
       <Footer />
     </div>
   );

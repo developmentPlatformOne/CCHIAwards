@@ -12,7 +12,7 @@ const Banner = (props) => {
         <Container>
             <h2>Aims and Objective</h2>
             <Row>
-                <Col md={12} lg={6}>
+                <Col md={12} lg={6} xl={3}>
                     <figure>
                         <img src={badge} alt="aims" />
                         {lang === 'ar' ? 
@@ -31,7 +31,7 @@ const Banner = (props) => {
                         }
                     </figure>
                 </Col>
-                <Col md={12} lg={6}>
+                <Col md={12} lg={6} xl={3}>
                     <figure>
                         <img src={handshake} alt="aims" />
                         {lang === 'ar' ? 
@@ -50,7 +50,7 @@ const Banner = (props) => {
                         }
                     </figure>
                 </Col>
-                <Col md={12} lg={6}>
+                <Col md={12} lg={6} xl={3}>
                     <figure>
                         <img src={gear} alt="aims" />
                         {lang === 'ar' ? 
@@ -69,7 +69,7 @@ const Banner = (props) => {
                         }
                     </figure>
                 </Col>
-                <Col md={12} lg={6}>
+                <Col md={12} lg={6} xl={3}>
                     <figure>
                         <img src={sound} alt="aims" />
                         {lang === 'ar' ? 
