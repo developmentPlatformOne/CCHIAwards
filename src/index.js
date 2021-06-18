@@ -5,13 +5,8 @@ import { Routes } from './components/Routes'; // where we are going to specify o
 import reportWebVitals from './reportWebVitals';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-if (localStorage.getItem('lang') === 'ar') {
-  require('./dist/css/style-en.scss');
-  require('./dist/css/style-ar.scss');
-} else {
-  require('./dist/css/style-ar.scss');
-  require('./dist/css/style-en.scss');
-}
+
+import  './dist/css/style.scss';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="mainHtml">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -40,4 +40,13 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    if (localStorage.getItem('lang') === 'ar') {
+      var element = document.getElementById("mainHtml");
+      element.classList.add("rtl");
+    } else {
+      var element = document.getElementById("mainHtml");
+      element.classList.remove("rtl");
+    }
+  </script>
 </html>

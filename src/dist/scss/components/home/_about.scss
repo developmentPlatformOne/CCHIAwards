@@ -91,6 +91,9 @@
             height: 100%;
             position: absolute;
             #{$right}: 0;
+            @if ($right = left) {
+                right: unset !important;
+            }
             top: 0;
             @include breakpoint(mid){
                 display: none;
