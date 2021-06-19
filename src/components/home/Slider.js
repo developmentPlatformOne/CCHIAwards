@@ -45,7 +45,7 @@ export default class JudgeSlider extends Component {
           <Slider {...settings}>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge4} alt="judge" />
+                 <img loading="lazy" src={judge4} alt="judge" />
                 <figcaption>
                   <h4>Christian Gregorowicz</h4>
                   <h5>Health Insurance Companies</h5>
@@ -56,7 +56,7 @@ export default class JudgeSlider extends Component {
             </div>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge3} alt="judge" />
+                 <img loading="lazy" src={judge3} alt="judge" />
                 <figcaption>
                   <h4>Abdulaziz Abdulbaqi</h4>
                   <h5>Government Official</h5>
@@ -68,7 +68,7 @@ export default class JudgeSlider extends Component {
             </div>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge2} alt="judge" />
+                 <img loading="lazy" src={judge2} alt="judge" />
                 <figcaption>
                   <h4>Dr. Reem Bunyan</h4>
                   <h5>Government Official & Healthcare Provider</h5>
@@ -80,7 +80,7 @@ export default class JudgeSlider extends Component {
             </div>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge1} alt="judge" />
+                 <img loading="lazy" src={judge1} alt="judge" />
                 <figcaption>
                   <h4>Ahmad Al Ghamdi</h4>
                   <h5>Beneficiaries</h5>
@@ -91,7 +91,7 @@ export default class JudgeSlider extends Component {
             </div>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge9} alt="judge" />
+                 <img loading="lazy" src={judge9} alt="judge" />
                 <figcaption>
                   <h4>Dr. Nezar Bahabri</h4>
                   <h5>Public/International Figure</h5>
@@ -103,7 +103,7 @@ export default class JudgeSlider extends Component {
             </div>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge8} alt="judge" />
+                 <img loading="lazy" src={judge8} alt="judge" />
                 <figcaption>
                   <h4>Husein Reka</h4>
                   <h5>CCHI</h5>
@@ -114,7 +114,7 @@ export default class JudgeSlider extends Component {
             </div>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge7} alt="judge" />
+                 <img loading="lazy" src={judge7} alt="judge" />
                 <figcaption>
                   <h4>Lamar Hasbrouch</h4>
                   <h5>CCHI</h5>
@@ -125,7 +125,7 @@ export default class JudgeSlider extends Component {
             </div>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge6} alt="judge" />
+                 <img loading="lazy" src={judge6} alt="judge" />
                 <figcaption>
                   <h4>Daniel Whitehead</h4>
                   <h5>Health Insurance Companies</h5>
@@ -136,7 +136,7 @@ export default class JudgeSlider extends Component {
             </div>
             <div className="judgeSlider-holder">
               <figure>
-                <img src={judge5} alt="judge" />
+                 <img loading="lazy" src={judge5} alt="judge" />
                 <figcaption>
                   <h4>Hanadi Al-Salmi</h4>
                   <h5>Healthcare Provider</h5>

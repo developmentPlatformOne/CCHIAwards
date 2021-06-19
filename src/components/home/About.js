@@ -12,7 +12,7 @@ const About = (props) => {
         <Container>
             <Row>
                 <Col md={12} lg={6}>
-                    <img src={person2} alt="person2" />
+                    <img loading="lazy" src={person2} alt="person2" />
                 </Col>
                 <Col md={12} lg={6}>
                 {lang === 'ar' ? 
@@ -60,7 +60,7 @@ const About = (props) => {
                         }
                         
                     </Col>
-                    <img src={shamp2} alt="shamp2" />
+                    <img loading="lazy" src={shamp2} alt="shamp2" />
                     <Col>
                         
                     </Col>
@@ -88,7 +88,7 @@ const About = (props) => {
                         }
                     </Col>
                     <Col md={12} lg={6}>
-                        <img src={person1} alt="person1" />
+                        <img loading="lazy" src={person1} alt="person1" />
                     </Col>
                 </Row>
             </Container>

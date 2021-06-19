@@ -14,7 +14,7 @@ const Banner = (props) => {
             <Row>
                 <Col md={12} lg={6} xl={3}>
                     <figure>
-                        <img src={badge} alt="aims" />
+                        <img loading="lazy" src={badge} alt="aims" />
                         {lang === 'ar' ? 
                             <Fragment>
                                 <figcaption>الاعتراف</figcaption>
@@ -33,7 +33,7 @@ const Banner = (props) => {
                 </Col>
                 <Col md={12} lg={6} xl={3}>
                     <figure>
-                        <img src={handshake} alt="aims" />
+                        <img loading="lazy" src={handshake} alt="aims" />
                         {lang === 'ar' ? 
                             <Fragment>
                                 <figcaption>تشجيع</figcaption>
@@ -52,7 +52,7 @@ const Banner = (props) => {
                 </Col>
                 <Col md={12} lg={6} xl={3}>
                     <figure>
-                        <img src={gear} alt="aims" />
+                        <img loading="lazy" src={gear} alt="aims" />
                         {lang === 'ar' ? 
                             <Fragment>
                                 <figcaption>تقديم</figcaption>
@@ -71,7 +71,7 @@ const Banner = (props) => {
                 </Col>
                 <Col md={12} lg={6} xl={3}>
                     <figure>
-                        <img src={sound} alt="aims" />
+                        <img loading="lazy" src={sound} alt="aims" />
                         {lang === 'ar' ? 
                             <Fragment>
                                 <figcaption>التعزيز</figcaption>

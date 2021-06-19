@@ -8,7 +8,7 @@ const Banner = (props) => {
     <section className="banner" ref={props.homeRef} >
         <Container>
             <h2>{lang === 'ar' ? 'جائزة التميز في التأمين الصحي التعاوني 2021' : 'Award of Excellence in Cooperative Health Insurance 2021' }</h2>
-            <img alt="banner" src={shamp}></img>
+            <img loading="lazy" alt="banner" src={shamp}></img>
         </Container>
         <span className="whiteShape"></span>
     </section>
