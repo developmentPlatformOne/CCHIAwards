@@ -3,6 +3,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from 'axios'
 import plus from '../../dist/img/plus.svg';
+import loader from '../../dist/img/loader.svg';
+import error from '../../dist/img/error.svg';
+import SuccessMsg from './Success';
 import { Container, Accordion, Card, useAccordionToggle, Button, Col, Row, Form } from 'react-bootstrap';
 
 
@@ -78,6 +81,7 @@ useEffect(() => {
             .test('fileType', lang === 'ar' ? 'PDF فقط' : "PDF Only", value => value ? ['application/pdf'].includes(value.type) : null ),
     }),
     onSubmit: values => {
+        setSuccess(3)
         let CompanyLogoFile = values.CompanyLogo;
         let AttachFile1File = values.AttachFile1;
         let AttachFile2File = values.AttachFile2;
@@ -106,15 +110,19 @@ useEffect(() => {
         formData,
         options)
         .then(res => {
-             console.log('Res ',res)
+             console.log('Res ',res);
+             setSuccess(res.data)
         })
         .catch(err => {
-            console.log('Err ', err)
+            console.log('Err ', err);
+            setSuccess(0)
         });
     },
   });
   const [activeKeyChild, setActiveKeyChild] = useState("30");
+  const [success, setSuccess] = useState(2);
   return (
+    success === 2 || success === 3 || success === 0 ?
     <Container>
         <div className="applyFormHeader">
             <img src={props.awardIcon} alt="icon" />
@@ -629,7 +637,9 @@ useEffect(() => {
         <div className="btnHolder">
             <Button variant="primary" type="submit">{lang === 'ar' ? 'تقديم' : 'Submit' }</Button>
         </div>
+        {success === 3 ? <div className="loderHolder"><img className="loaderImg" src={loader} alt="loaderImg" /></div> : null}
+        {success === 0 ? <div className="failMsg"><img className="loaderImg" src={error} alt="error" /><span>{lang === 'ar' ? 'لم يتم الارسال' : 'failed' }</span></div> : null}
         </Form>
-    </Container>
+    </Container> : <SuccessMsg />
   );
 }
